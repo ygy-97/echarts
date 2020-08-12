@@ -1,18 +1,54 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id= 'echarts'>
+
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      option:{},
+    }
+  },
+  mounted(){
+    let myChar = this.$echarts.init(document.getElementById('echarts'));
+    let option = {
+      title:{
+        text:'demo',
+        
+      },
+      tooltip:{},
+      legend:{
+        data:['销量']
+      },
+      xAxis:{
+        data:['1','2','3','4']
+      },
+      yAxis:{},
+      series:[
+        {
+          name:'sole',
+          type:'line',
+          data:[11,223,44,55]
+        }
+      ]
+    }
+    myChar.setOption(option);
+
   }
-}
+};
 </script>
+
+<style scoped>
+.home {
+  width: 100vw;
+  height: 100vh;
+}
+#echarts{
+  width: 50%;
+  height: 50%;
+}
+</style>
