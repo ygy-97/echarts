@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import echarts from 'echarts'
+import './china.js'
 import 'lib-flexible/flexible'
+
 
 Vue.prototype.$echarts = echarts;
 
