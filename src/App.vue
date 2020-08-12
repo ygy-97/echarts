@@ -927,7 +927,6 @@ export default {
     	        }
     	    }
     	    return res;
-    	   	
     	};
 
     	var color = ['#a6c84c', '#ffa022', '#46bee9'];//航线的颜色
