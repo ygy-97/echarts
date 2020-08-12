@@ -298,8 +298,8 @@ export default {
           },
           // right:'10%'
         },
-        tooltip:{
-           trigger: "axis",
+        tooltip: {
+          trigger: "axis",
         },
         xAxis: {
           type: "category",
@@ -359,15 +359,15 @@ export default {
         series: [
           {
             name: "新增粉丝",
-             data:  [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
+            data: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
             type: "line",
             smooth: true,
           },
           {
             name: "新增游客",
             type: "line",
-             data: [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79],  
-            smooth:true
+            data: [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79],
+            smooth: true,
           },
         ],
       };
@@ -376,6 +376,309 @@ export default {
         myEchart.resize();
       });
     },
+    // 折线图2
+    line2() {
+      let line2 = document.querySelector("#line2");
+      let myEchart = this.$echarts.init(line2);
+      let options = {
+        color: ["#00f2f1", "#ed3f35"],
+        boundaryGap: "false",
+        tooltip: {
+          trigger: "axis",
+        },
+        legend: {
+          top: "0%",
+          textStyle: {
+            color: "rgba(255,255,255,.5)",
+            fontSize: 12,
+          },
+        },
+        grid: {
+          left: 10,
+          top: 30,
+          right: 10,
+          bottom: 10,
+          containLabel: true,
+        },
+        xAxis: {
+          data: [
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "26",
+            "28",
+            "29",
+            "30",
+          ],
+
+          axisLabel: {
+            textStyle: {
+              color: "rgba(255,255,255,.6)",
+              fontSize: 12,
+            },
+          },
+          axisLine: {
+            lineStyle: {
+              color: "rgba(255,255,255,.2)",
+            },
+          },
+        },
+        yAxis: {
+          axisTick: { show: false },
+          axisLine: {
+            lineStyle: {
+              color: "rgba(255,255,255,.1)",
+            },
+          },
+          axisLabel: {
+            textStyle: {
+              color: "rgba(255,255,255,.6)",
+              fontSize: 12,
+            },
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: "rgba(255,255,255,.1)",
+            },
+          },
+        },
+        series: [
+          {
+            name: "邮件直销",
+            type: "line",
+            data: [
+              30,
+              40,
+              30,
+              40,
+              30,
+              40,
+              30,
+              60,
+              20,
+              40,
+              30,
+              40,
+              30,
+              40,
+              30,
+              40,
+              30,
+              60,
+              20,
+              40,
+              30,
+              40,
+              30,
+              40,
+              30,
+              40,
+              20,
+              60,
+              50,
+              40,
+            ],
+            itemStyle: {},
+            smooth: true,
+            lineStyle: {
+              width: 2,
+              color: "#0184d5",
+            },
+            areaStyle: {
+              color: {
+                type: "linear",
+                x: 0,
+                y: 0,
+                x2: 0,
+                y2: 1,
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: "rgba(1, 132, 213, 0.4)", // 渐变色的起始颜色
+                  },
+                  {
+                    offset: 0.8,
+                    color: "rgba(1, 132, 213, 0.1)", // 渐变线的结束颜色
+                  },
+                ],
+                global: false, // 缺省为 false
+              },
+              shadowColor: "rgba(0, 0, 0, 0.1)",
+            },
+            // 设置拐点 小圆点
+            symbol: "circle",
+            // 拐点大小
+            symbolSize: 8,
+            // 设置拐点颜色以及边框
+            itemStyle: {
+              color: "#0184d5",
+              borderColor: "rgba(221, 220, 107, .1)",
+              borderWidth: 12,
+            },
+            // 开始不显示拐点， 鼠标经过显示
+            showSymbol: false,
+          },
+          {
+            name: "联盟广告",
+            type: "line",
+            data: [
+              130,
+              10,
+              20,
+              40,
+              30,
+              40,
+              80,
+              60,
+              20,
+              40,
+              90,
+              40,
+              20,
+              140,
+              30,
+              40,
+              130,
+              20,
+              20,
+              40,
+              80,
+              70,
+              30,
+              40,
+              30,
+              120,
+              20,
+              99,
+              50,
+              20,
+            ],
+            areaStyle: {
+              color: {
+                type: "linear",
+                x: 0,
+                y: 0,
+                x2: 0,
+                y2: 1,
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: "rgba(0, 216, 135, 0.4)", // 渐变色的起始颜色
+                  },
+                  {
+                    offset: 0.8,
+                    color: "rgba(0, 216, 135, 0.1)", // 渐变线的结束颜色
+                  },
+                ],
+                global: false, // 缺省为 false
+              },
+              shadowColor: "rgba(0, 0, 0, 0.1)",
+            },
+            // 设置拐点 小圆点
+            symbol: "circle",
+            // 拐点大小
+            symbolSize: 5,
+            // 设置拐点颜色以及边框
+            itemStyle: {
+              color: "#00d887",
+              borderColor: "rgba(221, 220, 107, .1)",
+              borderWidth: 12,
+            },
+            // 开始不显示拐点， 鼠标经过显示
+            showSymbol: false,
+            smooth: true,
+          },
+        ],
+      };
+      myEchart.setOption(options);
+      window.addEventListener("resize", () => {
+        myEchart.resize();
+      });
+    },
+    // 饼图1
+    pie1() {
+      let pie1 = document.querySelector("#pie1");
+      let myEchart = this.$echarts.init(pie1);
+      let options = {
+        tooltip: {
+          trigger: "item",
+          formatter: "{a} <br/>{b}: {c} ({d}%)",
+        },
+        legend: {
+          // orient: 'vertical',
+          left: "auto",
+          bottom: 0,
+          itemWidth: 10,
+          itemHeight: 10,
+          //  data: ["0岁以下", "20-29岁", "30-39岁", "40-49岁", "50岁以上"],
+          textStyle: {
+            color: "rgba(255,255,255,.5)",
+            fontSize: 12,
+          },
+        },
+        color: ["#065aab", "#066eab", "#0682ab", "#0696ab", "#06a0ab"],
+        series: [
+          {
+            name: "访问来源",
+            type: "pie",
+            radius: ["40%", "60%"],
+            avoidLabelOverlap: false,
+            label: {
+              show: false,
+              position: "center",
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: "16",
+                fontWeight: "bold",
+              },
+            },
+            labelLine: {
+              show: false,
+            },
+            data: [
+              { value: 1, name: "0岁以下" },
+              { value: 4, name: "20-29岁" },
+              { value: 2, name: "30-39岁" },
+              { value: 2, name: "40-49岁" },
+              { value: 1, name: "50岁以上" },
+            ],
+          },
+        ],
+      };
+
+      myEchart.setOption(options);
+      window.addEventListener("resize", () => {
+        myEchart.resize();
+      });
+    },
+    // 饼图2
+    pie2() {},
   },
   created() {
     setInterval(() => {
@@ -387,6 +690,9 @@ export default {
     this.bar1();
     this.bar2();
     this.line1();
+    this.line2();
+    this.pie1();
+    this.pie2();
   },
 };
 </script>
