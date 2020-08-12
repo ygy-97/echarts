@@ -628,9 +628,10 @@ export default {
           trigger: "item",
           formatter: "{a} <br/>{b}: {c} ({d}%)",
         },
+
         legend: {
           // orient: 'vertical',
-          left: "auto",
+          left: "center",
           bottom: 0,
           itemWidth: 10,
           itemHeight: 10,
@@ -651,9 +652,11 @@ export default {
               show: false,
               position: "center",
             },
+            // left:'center',
+            top: "-20%",
             emphasis: {
               label: {
-                show: true,
+                // show: true,
                 fontSize: "16",
                 fontWeight: "bold",
               },
@@ -678,7 +681,74 @@ export default {
       });
     },
     // 饼图2
-    pie2() {},
+    pie2() {
+      let pie2 = document.querySelector("#pie2");
+      let myEchart = this.$echarts.init(pie2);
+      let options = {
+        tooltip: {
+          trigger: "item",
+          formatter: "{a} <br/>{b}: {c} ({d}%)",
+        },
+
+        legend: {
+          // orient: 'vertical',
+          left: "center",
+          bottom: 0,
+          itemWidth: 10,
+          itemHeight: 10,
+          textStyle: {
+            color: "rgba(255,255,255,.5)",
+            fontSize: 12,
+          },
+        },
+        color: [
+          "#006cff",
+          "#60cda0",
+          "#ed8884",
+          "#ff9f7f",
+          "#0096ff",
+          "#9fe6b8",
+          "#32c5e9",
+          "#1d9dff",
+        ],
+        series: [
+          {
+            name: "访问来源",
+            type: "pie",
+            radius: ["10%", "50%"],
+            avoidLabelOverlap: false,
+            roseType: "area",
+            label: {
+              show: true,
+              position: "center",
+            },
+            // left:'center',
+            top: "-20%",
+            labelLine: {
+              show: true,
+            },
+            label:{
+              fontSize:10
+            },
+            data: [
+              { value: 20, name: "云南" },
+              { value: 26, name: "北京" },
+              { value: 24, name: "山东" },
+              { value: 25, name: "河北" },
+              { value: 20, name: "江苏" },
+              { value: 25, name: "浙江" },
+              { value: 30, name: "四川" },
+              { value: 42, name: "湖北" },
+            ],
+          },
+        ],
+      };
+      
+      myEchart.setOption(options);
+      window.addEventListener("resize", () => {
+        myEchart.resize();
+      });
+    },
   },
   created() {
     setInterval(() => {
