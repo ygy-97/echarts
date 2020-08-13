@@ -81,6 +81,28 @@
             margin: 0;
             padding: 0.125rem;
           }
+          .year{
+            position: absolute;
+            width: 1.25rem;
+            right: .125rem;
+            top: .1rem;
+            // border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+            &>div{
+              cursor: pointer;
+              border: 1px solid transparent;
+            }
+            &>div.active{
+              border: 1px solid #fff;
+              border-radius: 3px;
+            }
+            .year1{
+            }
+            .year2{
+              // border: 1px solid #fff;
+            }
+          }
           .chart {
             margin: 0 auto;
             width: 90%;
