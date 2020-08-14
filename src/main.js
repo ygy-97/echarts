@@ -16,3 +16,9 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+document.addEventListener('deviceready',function () {
+        if(window.MobileAccessibility){
+          window.MobileAccessibility.usePreferredTextZoom(false);
+        }
+})
